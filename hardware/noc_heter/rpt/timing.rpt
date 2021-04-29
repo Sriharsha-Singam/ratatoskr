@@ -1,0 +1,207 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : full_noc
+Version: R-2020.09-SP3
+Date   : Tue Apr 27 18:21:49 2021
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NanGate_15nm_OCL
+Wire Load Model Mode: top
+
+  Startpoint: router_12/CTRL_ARB/vc_allocator_1/input_first_arbiter_i_2/seq_packet_counter_i_1/flit_count_int_regx3x
+              (rising edge-triggered flip-flop clocked by clk_input)
+  Endpoint: router_12/CTRL_ARB/vc_allocator_1/input_first_arbiter_i_2/seq_packet_counter_i_3/flit_count_int_regx0x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  router_12/CTRL_ARB/vc_allocator_1/input_first_arbiter_i_2/seq_packet_counter_i_1/flit_count_int_regx3x/CLK (DFFRNQ_X1)
+                                                          0.00 #     0.00 r
+  router_12/CTRL_ARB/vc_allocator_1/input_first_arbiter_i_2/seq_packet_counter_i_1/flit_count_int_regx3x/Q (DFFRNQ_X1)
+                                                         13.63      13.63 f
+  router_12/CTRL_ARB/vc_allocator_1/input_first_arbiter_i_2/seq_packet_counter_i_1/flit_count(3) (seq_packet_counter_1_854)
+                                                          0.00      13.63 f
+  router_12/CTRL_ARB/vc_allocator_1/input_first_arbiter_i_2/U42/Z (OR2_X1)
+                                                          5.32      18.95 f
+  router_12/CTRL_ARB/vc_allocator_1/input_first_arbiter_i_2/U28/ZN (NOR4_X1)
+                                                          8.02      26.97 r
+  router_12/CTRL_ARB/vc_allocator_1/input_first_arbiter_i_2/U29/ZN (INV_X1)
+                                                          2.87      29.84 f
+  router_12/CTRL_ARB/vc_allocator_1/input_first_arbiter_i_2/input_vc_in_use(1) (header_arbiter_and_decoder_1_2_5_2_4_1_XY)
+                                                          0.00      29.84 f
+  router_12/CTRL_ARB/vc_allocator_1/input_vc_in_use(9) (vc_allocator_high_perf_5_1_2_1_XY)
+                                                          0.00      29.84 f
+  router_12/CTRL_ARB/switch_allocator_1/input_vc_in_use(9) (switch_allocator_5_XY_29)
+                                                          0.00      29.84 f
+  router_12/CTRL_ARB/switch_allocator_1/U133/Z (AND2_X1)
+                                                          4.12      33.96 f
+  router_12/CTRL_ARB/switch_allocator_1/rr_arbiter_2/req(1) (rr_arbiter_no_delay_CNT4_897)
+                                                          0.00      33.96 f
+  router_12/CTRL_ARB/switch_allocator_1/rr_arbiter_2/U31/ZN (INV_X1)
+                                                          4.43      38.39 r
+  router_12/CTRL_ARB/switch_allocator_1/rr_arbiter_2/U30/ZN (NOR3_X1)
+                                                          6.43      44.82 f
+  router_12/CTRL_ARB/switch_allocator_1/rr_arbiter_2/U10/ZN (NOR3_X1)
+                                                          8.43      53.25 r
+  router_12/CTRL_ARB/switch_allocator_1/rr_arbiter_2/U5/ZN (INV_X1)
+                                                          4.05      57.30 f
+  router_12/CTRL_ARB/switch_allocator_1/rr_arbiter_2/U13/ZN (NOR2_X1)
+                                                          3.53      60.82 r
+  router_12/CTRL_ARB/switch_allocator_1/rr_arbiter_2/U12/ZN (OAI22_X1)
+                                                          4.44      65.26 f
+  router_12/CTRL_ARB/switch_allocator_1/rr_arbiter_2/U4/ZN (INV_X1)
+                                                         14.50      79.76 r
+  router_12/CTRL_ARB/switch_allocator_1/rr_arbiter_2/grant(1) (rr_arbiter_no_delay_CNT4_897)
+                                                          0.00      79.76 r
+  router_12/CTRL_ARB/switch_allocator_1/U627/ZN (AOI22_X1)
+                                                          6.79      86.55 f
+  router_12/CTRL_ARB/switch_allocator_1/U105/ZN (INV_X1)
+                                                          2.90      89.44 r
+  router_12/CTRL_ARB/switch_allocator_1/U631/ZN (AOI22_X1)
+                                                          3.72      93.16 f
+  router_12/CTRL_ARB/switch_allocator_1/U632/ZN (OAI22_X1)
+                                                          4.83      97.99 r
+  router_12/CTRL_ARB/switch_allocator_1/U167/Z (AND3_X1)
+                                                          6.36     104.34 r
+  router_12/CTRL_ARB/switch_allocator_1/rr_arbiter_4_0/req(1) (rr_arbiter_no_delay_CNT4_890)
+                                                          0.00     104.34 r
+  router_12/CTRL_ARB/switch_allocator_1/rr_arbiter_4_0/U26/ZN (INV_X1)
+                                                          4.11     108.45 f
+  router_12/CTRL_ARB/switch_allocator_1/rr_arbiter_4_0/U24/ZN (NOR3_X1)
+                                                         12.96     121.41 r
+  router_12/CTRL_ARB/switch_allocator_1/rr_arbiter_4_0/U9/ZN (NOR3_X1)
+                                                          7.05     128.47 f
+  router_12/CTRL_ARB/switch_allocator_1/rr_arbiter_4_0/U4/ZN (INV_X1)
+                                                          4.23     132.70 r
+  router_12/CTRL_ARB/switch_allocator_1/rr_arbiter_4_0/U12/ZN (NOR2_X1)
+                                                          2.60     135.29 f
+  router_12/CTRL_ARB/switch_allocator_1/rr_arbiter_4_0/U10/ZN (AOI22_X1)
+                                                          5.09     140.39 r
+  router_12/CTRL_ARB/switch_allocator_1/rr_arbiter_4_0/U3/ZN (INV_X1)
+                                                          5.81     146.20 f
+  router_12/CTRL_ARB/switch_allocator_1/rr_arbiter_4_0/grant(2) (rr_arbiter_no_delay_CNT4_890)
+                                                          0.00     146.20 f
+  router_12/CTRL_ARB/switch_allocator_1/U49/ZN (NOR2_X1)
+                                                          9.25     155.45 r
+  router_12/CTRL_ARB/switch_allocator_1/U8/ZN (INV_X1)
+                                                          6.11     161.56 f
+  router_12/CTRL_ARB/switch_allocator_1/U103/ZN (AOI22_X1)
+                                                          5.57     167.13 r
+  router_12/CTRL_ARB/switch_allocator_1/U101/ZN (OAI22_X1)
+                                                         37.30     204.43 f
+  router_12/CTRL_ARB/switch_allocator_1/U318/Z (XOR2_X1)
+                                                         18.43     222.85 r
+  router_12/CTRL_ARB/switch_allocator_1/U316/Z (OR2_X1)
+                                                          7.99     230.85 r
+  router_12/CTRL_ARB/switch_allocator_1/U314/Z (AND2_X1)
+                                                          8.96     239.80 r
+  router_12/CTRL_ARB/switch_allocator_1/U332/Z (MUX2_X1)
+                                                          7.71     247.51 r
+  router_12/CTRL_ARB/switch_allocator_1/U312/Z (OR2_X1)
+                                                          5.71     253.21 r
+  router_12/CTRL_ARB/switch_allocator_1/U310/Z (AND2_X1)
+                                                          6.03     259.25 r
+  router_12/CTRL_ARB/switch_allocator_1/U308/Z (OR2_X1)
+                                                          9.66     268.91 r
+  router_12/CTRL_ARB/switch_allocator_1/U333/Z (MUX2_X1)
+                                                          8.23     277.14 f
+  router_12/CTRL_ARB/switch_allocator_1/U334/Z (OR3_X1)
+                                                          6.31     283.46 f
+  router_12/CTRL_ARB/switch_allocator_1/U13/Z (OR2_X1)
+                                                          5.99     289.45 f
+  router_12/CTRL_ARB/switch_allocator_1/U337/Z (AND2_X1)
+                                                          4.87     294.32 f
+  router_12/CTRL_ARB/switch_allocator_1/U9/ZN (NOR2_X1)
+                                                          5.57     299.89 r
+  router_12/CTRL_ARB/switch_allocator_1/U5/ZN (INV_X1)
+                                                          3.51     303.39 f
+  router_12/CTRL_ARB/switch_allocator_1/U12/ZN (NOR2_X1)
+                                                          3.29     306.68 r
+  router_12/CTRL_ARB/switch_allocator_1/U10/ZN (AOI22_X1)
+                                                          3.19     309.88 f
+  router_12/CTRL_ARB/switch_allocator_1/U45/ZN (NAND4_X1)
+                                                          9.89     319.77 r
+  router_12/CTRL_ARB/switch_allocator_1/U113/Z (AND2_X1)
+                                                         12.14     331.91 r
+  router_12/CTRL_ARB/switch_allocator_1/vc_transfer_vec(9) (switch_allocator_5_XY_29)
+                                                          0.00     331.91 r
+  router_12/CTRL_ARB/vc_allocator_1/enr_vc(9) (vc_allocator_high_perf_5_1_2_1_XY)
+                                                          0.00     331.91 r
+  router_12/CTRL_ARB/vc_allocator_1/input_first_arbiter_i_2/enr_vc(1) (header_arbiter_and_decoder_1_2_5_2_4_1_XY)
+                                                          0.00     331.91 r
+  router_12/CTRL_ARB/vc_allocator_1/input_first_arbiter_i_2/U21/ZN (NAND3_X1)
+                                                          4.78     336.70 f
+  router_12/CTRL_ARB/vc_allocator_1/input_first_arbiter_i_2/U20/ZN (NOR4_X1)
+                                                         34.21     370.91 r
+  router_12/CTRL_ARB/vc_allocator_1/input_first_arbiter_i_2/packet_end(1) (header_arbiter_and_decoder_1_2_5_2_4_1_XY)
+                                                          0.00     370.91 r
+  router_12/CTRL_ARB/vc_allocator_1/output_last_arbiter_i_0/packet_endx1xx1x (vc_output_allocator_high_perf_port_num5_vc_num_out4_149)
+                                                          0.00     370.91 r
+  router_12/CTRL_ARB/vc_allocator_1/output_last_arbiter_i_0/U139/ZN (AOI22_X1)
+                                                         10.55     381.46 f
+  router_12/CTRL_ARB/vc_allocator_1/output_last_arbiter_i_0/U140/ZN (NAND2_X1)
+                                                          4.52     385.98 r
+  router_12/CTRL_ARB/vc_allocator_1/output_last_arbiter_i_0/U148/ZN (AOI22_X1)
+                                                          4.25     390.23 f
+  router_12/CTRL_ARB/vc_allocator_1/output_last_arbiter_i_0/U149/ZN (OAI22_X1)
+                                                          5.00     395.23 r
+  router_12/CTRL_ARB/vc_allocator_1/output_last_arbiter_i_0/U34/ZN (INV_X1)
+                                                          2.30     397.53 f
+  router_12/CTRL_ARB/vc_allocator_1/output_last_arbiter_i_0/U33/ZN (NAND2_X1)
+                                                          5.65     403.18 r
+  router_12/CTRL_ARB/vc_allocator_1/output_last_arbiter_i_0/U20/ZN (NOR4_X1)
+                                                          5.02     408.20 f
+  router_12/CTRL_ARB/vc_allocator_1/output_last_arbiter_i_0/U12/ZN (INV_X1)
+                                                          7.34     415.54 r
+  router_12/CTRL_ARB/vc_allocator_1/output_last_arbiter_i_0/U67/Z (AND2_X1)
+                                                          5.89     421.43 r
+  router_12/CTRL_ARB/vc_allocator_1/output_last_arbiter_i_0/ack_rq_vc_out(1) (vc_output_allocator_high_perf_port_num5_vc_num_out4_149)
+                                                          0.00     421.43 r
+  router_12/CTRL_ARB/vc_allocator_1/U4/Z (OR4_X1)         8.97     430.40 r
+  router_12/CTRL_ARB/vc_allocator_1/input_first_arbiter_i_2/ack_vc (header_arbiter_and_decoder_1_2_5_2_4_1_XY)
+                                                          0.00     430.40 r
+  router_12/CTRL_ARB/vc_allocator_1/input_first_arbiter_i_2/U12/ZN (INV_X1)
+                                                          4.35     434.75 f
+  router_12/CTRL_ARB/vc_allocator_1/input_first_arbiter_i_2/U8/ZN (NOR2_X1)
+                                                          4.70     439.45 r
+  router_12/CTRL_ARB/vc_allocator_1/input_first_arbiter_i_2/seq_packet_counter_i_3/allocated (seq_packet_counter_1_852)
+                                                          0.00     439.45 r
+  router_12/CTRL_ARB/vc_allocator_1/input_first_arbiter_i_2/seq_packet_counter_i_3/U5/ZN (INV_X1)
+                                                          2.20     441.65 f
+  router_12/CTRL_ARB/vc_allocator_1/input_first_arbiter_i_2/seq_packet_counter_i_3/U4/ZN (NOR2_X1)
+                                                          8.65     450.30 r
+  router_12/CTRL_ARB/vc_allocator_1/input_first_arbiter_i_2/seq_packet_counter_i_3/U3/ZN (NOR2_X1)
+                                                          7.19     457.48 f
+  router_12/CTRL_ARB/vc_allocator_1/input_first_arbiter_i_2/seq_packet_counter_i_3/U22/ZN (AOI22_X1)
+                                                          5.36     462.85 r
+  router_12/CTRL_ARB/vc_allocator_1/input_first_arbiter_i_2/seq_packet_counter_i_3/U20/ZN (NAND2_X1)
+                                                          2.59     465.44 f
+  router_12/CTRL_ARB/vc_allocator_1/input_first_arbiter_i_2/seq_packet_counter_i_3/flit_count_int_regx0x/D (DFFRNQ_X1)
+                                                          0.00     465.44 f
+  data arrival time                                                465.44
+
+  clock clk_input (rise edge)                          1000.00    1000.00
+  clock network delay (ideal)                             0.00    1000.00
+  clock uncertainty                                       0.00    1000.00
+  router_12/CTRL_ARB/vc_allocator_1/input_first_arbiter_i_2/seq_packet_counter_i_3/flit_count_int_regx0x/CLK (DFFRNQ_X1)
+                                                          0.00    1000.00 r
+  library setup time                                     -7.60     992.40
+  data required time                                               992.40
+  --------------------------------------------------------------------------
+  data required time                                               992.40
+  data arrival time                                               -465.44
+  --------------------------------------------------------------------------
+  slack (MET)                                                      526.96
+
+
+1

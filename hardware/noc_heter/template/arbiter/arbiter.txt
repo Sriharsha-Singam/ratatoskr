@@ -32,9 +32,8 @@ entity arbiter is
     port_exist                   : integer_vec       := $max_port_exist;
     Xis                          : natural           := 1;
     Yis                          : natural           := 1;
-    Zis                          : natural           := 1;
     header_incl_in_packet_length : boolean           := true;
-    rout_algo                    : string            := "XYZ_ref";
+    rout_algo                    : string            := "XY";
     vc_num_vec                   : integer_vec       := $max_vc_num_vec;
     vc_num_out_vec               : integer_vec       := $max_vc_num_out_vec;
     -- integer vector of range "0 to port_num-1, 0 to max_vc_num-1"                                   
@@ -70,7 +69,6 @@ begin  -- architecture structural
       port_exist                   => port_exist,
       Xis                          => Xis,
       Yis                          => Yis,
-      Zis                          => Zis,
       header_incl_in_packet_length => header_incl_in_packet_length,
       rout_algo                    => rout_algo,
       vc_num_vec                   => vc_num_vec,

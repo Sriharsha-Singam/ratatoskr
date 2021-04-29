@@ -12,8 +12,13 @@
 import subprocess
 import itertools
 import string
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from helper import *
 import numpy as np
 from string import Template
+from noc_hetero_vc_gen import AVAILABLE_PORTS, VC_COUNT, BUFFER_DEPTH, LOCAL, get_max_vc
 #########################################################################################
 #	Full_noc entity template
 #	Includes clk and rst and router local ports
@@ -65,39 +70,56 @@ end entity full_noc;
 #	Full_noc top of the architecture template and
 #	Defining interconnection signals data, credit increment (incr) and vc_write
 #########################################################################################
+# archi_top = Template("""
+# architecture structural of full_noc is
+#   type flit_vector_array is array (0 to $noc_z) of flit_vector(max_port_num-1 downto 0);
+#   type flit_vector_2D_array is array (0 to $noc_y) of flit_vector_array;
+#   type flit_vector_3D_array is array (0 to $noc_x) of flit_vector_2D_array;
+
+#   subtype incr_per_port is std_logic_vector($vc_num-1 downto 0);
+#   type incr_per_router is array (max_port_num-1 downto 0) of incr_per_port;
+#   type incr_array is array (0 to $noc_z) of incr_per_router;
+#   type incr_2D_array is array (0 to $noc_y) of incr_array;
+#   type incr_3D_array is array (0 to $noc_x) of incr_2D_array;
+
+
+#   signal inter_data_in      : flit_vector_3D_array;
+#   signal inter_data_out     : flit_vector_3D_array;
+#   signal inter_incr_in      : incr_3D_array;
+#   signal inter_incr_out     : incr_3D_array;
+#   signal inter_vc_write_in  : incr_3D_array;
+#   signal inter_vc_write_out : incr_3D_array;
+# """)
 archi_top = Template("""
 architecture structural of full_noc is
-  type flit_vector_array is array (0 to $noc_z) of flit_vector(max_port_num-1 downto 0);
-  type flit_vector_2D_array is array (0 to $noc_y) of flit_vector_array;
-  type flit_vector_3D_array is array (0 to $noc_x) of flit_vector_2D_array;
+  type flit_vector_array is array (0 to $noc_y) of flit_vector(max_port_num-1 downto 0);
+  type flit_vector_2D_array is array (0 to $noc_x) of flit_vector_array;
 
   subtype incr_per_port is std_logic_vector($vc_num-1 downto 0);
   type incr_per_router is array (max_port_num-1 downto 0) of incr_per_port;
-  type incr_array is array (0 to $noc_z) of incr_per_router;
-  type incr_2D_array is array (0 to $noc_y) of incr_array;
-  type incr_3D_array is array (0 to $noc_x) of incr_2D_array;
+  type incr_array is array (0 to $noc_y) of incr_per_router;
+  type incr_2D_array is array (0 to $noc_x) of incr_array;
 
 
-  signal inter_data_in      : flit_vector_3D_array;
-  signal inter_data_out     : flit_vector_3D_array;
-  signal inter_incr_in      : incr_3D_array;
-  signal inter_incr_out     : incr_3D_array;
-  signal inter_vc_write_in  : incr_3D_array;
-  signal inter_vc_write_out : incr_3D_array;
+  signal inter_data_in      : flit_vector_2D_array;
+  signal inter_data_out     : flit_vector_2D_array;
+  signal inter_incr_in      : incr_2D_array;
+  signal inter_incr_out     : incr_2D_array;
+  signal inter_vc_write_in  : incr_2D_array;
+  signal inter_vc_write_out : incr_2D_array;
 """)
 #########################################################################################
 #	Router generic map template
 ######################################################################################### 
 router_generic = Template("""
 --------------------------------------------------------------------------
--- Router at x= $Xis y=$Yis z=$Zis
+-- Router at x= $Xis y=$Yis
 --------------------------------------------------------------------------
-router_$Xis$Yis$Zis: entity work.router_pl
+router_$Xis$Yis: entity work.router_pl
   generic map (
 	port_num 			=> $port_num,
 	Xis	 			=> $Xis,
 	Yis	 			=> $Yis,
-	Zis	 			=> $Zis,
 	header_incl_in_packet_length	=> true,
 	port_exist			=> $port_exist,
 	vc_num_vec			=> $vc_num_vec,
@@ -108,15 +130,15 @@ router_$Xis$Yis$Zis: entity work.router_pl
 	)""")
 #########################################################################################
 #########################################################################################
-data_in_tmp=Template("""  signal data_in$x$y$z, data_out$x$y$z: flit_vector($port_num-1 downto 0);
+data_in_tmp=Template("""  signal data_in$x$y, data_out$x$y: flit_vector($port_num-1 downto 0);
 """)
-vc_write_rx_vec_tmp=Template("""  signal vc_write_rx_vec$x$y$z: std_logic_vector($sum_vc-1 downto 0);
+vc_write_rx_vec_tmp=Template("""  signal vc_write_rx_vec$x$y: std_logic_vector($sum_vc-1 downto 0);
 """)
-incr_rx_vec_tmp=Template("""  signal incr_rx_vec$x$y$z:  std_logic_vector($sum_vc-1 downto 0);
+incr_rx_vec_tmp=Template("""  signal incr_rx_vec$x$y:  std_logic_vector($sum_vc-1 downto 0);
 """)
-vc_write_tx_pl_vec_tmp=Template("""  signal vc_write_tx_pl_vec$x$y$z:  std_logic_vector($sum_vc-1 downto 0);
+vc_write_tx_pl_vec_tmp=Template("""  signal vc_write_tx_pl_vec$x$y:  std_logic_vector($sum_vc-1 downto 0);
 """)
-incr_tx_pl_vec_tmp=Template("""  signal incr_tx_pl_vec$x$y$z: std_logic_vector($sum_vc-1 downto 0);
+incr_tx_pl_vec_tmp=Template("""  signal incr_tx_pl_vec$x$y: std_logic_vector($sum_vc-1 downto 0);
 """)
 #########################################################################################
 #	Router port map template
@@ -125,12 +147,12 @@ router_port = Template("""
   port map (
 	clk 			=> clk,
 	rst 			=> rst,
-	data_rx	 		=> data_in$Xis$Yis$Zis,
-	vc_write_rx_vec		=> vc_write_rx_vec$Xis$Yis$Zis,
-	incr_rx_vec		=> incr_rx_vec$Xis$Yis$Zis,
-	data_tx_pl		=> data_out$Xis$Yis$Zis,
-	vc_write_tx_pl_vec	=> vc_write_tx_pl_vec$Xis$Yis$Zis,
-	incr_tx_pl_vec		=> incr_tx_pl_vec$Xis$Yis$Zis
+	data_rx	 		=> data_in$Xis$Yis,
+	vc_write_rx_vec		=> vc_write_rx_vec$Xis$Yis,
+	incr_rx_vec		=> incr_rx_vec$Xis$Yis,
+	data_tx_pl		=> data_out$Xis$Yis,
+	vc_write_tx_pl_vec	=> vc_write_tx_pl_vec$Xis$Yis,
+	incr_tx_pl_vec		=> incr_tx_pl_vec$Xis$Yis
 	);
 --------------------------------------------------------------------------
 -- Router port connections to adjacent routers
@@ -140,90 +162,104 @@ router_port = Template("""
 #	inter_data connection templates
 ######################################################################################### 
 inter_data_local= Template("""
-inter_data_in($Xis)($Yis)($Zis)(0) <= local_rx($i);
-local_tx($i)	          <= inter_data_out($Xis)($Yis)($Zis)(0);
+inter_data_in($Xis)($Yis)(0) <= local_rx($i);
+local_tx($i)	          <= inter_data_out($Xis)($Yis)(0);
 """)
-inter_data_in_1=Template("""
-inter_data_in($x)($y)($z)(1) <= inter_data_out($x)($y+1)($z)(3);
+#inter_data_in(x)(y)(port_number) <= inter_data_out(x of adjacent router)(y of adjacent router)(port of adjacent router)
+# All $i or $l is port number of a particular port
+inter_data_in=Template("""
+inter_data_in($x)($y)($i) <= inter_data_out($x$j)($y$k)($l);
 """)
-inter_data_in_2=Template("""
-inter_data_in($x)($y)($z)(2) <= inter_data_out($x+1)($y)($z)(4);
+# inter_data_in_2=Template("""
+# inter_data_in($x)($y)(2) <= inter_data_out($x+1)($y)(4);
+# """)
+# inter_data_in_3=Template("""
+# inter_data_in($x)($y)(3) <= inter_data_out($x)($y-1)(1);
+# """)
+# inter_data_in_4=Template("""
+# inter_data_in($x)($y)(4) <= inter_data_out($x-1)($y)(2);
+# """)
+# # inter_data_in_5=Template("""
+# # inter_data_in($x)($y)($z)(5) <= inter_data_out($x)($y)($z+1)(6);
+# # """)
+# inter_data_in_5=Template("""
+# inter_data_in($x)($y)(5) <= inter_data_out($x)($y)(6);
+# """)
+# # inter_data_in_6=Template("""
+# # inter_data_in($x)($y)($z)(6) <= inter_data_out($x)($y)($z-1)(5);
+# # """)
+# inter_data_in_6=Template("""
+# inter_data_in($x)($y)(6) <= inter_data_out($x)($y)(5);
+# """)
+data_rx_str_tmp=Template("""&inter_data_in($x)($y)($i)""")
+data_tx_str_tmp=Template("""&inter_data_out($x)($y)($i)""")
+data_rx_str_tmp0=Template("""inter_data_in($x)($y)(0)""")
+data_tx_str_tmp0=Template("""inter_data_out($x)($y)(0)""")
+inter_data2data_in=Template("""data_in$x$y($pos) <= inter_data_in($x)($y)($i);
 """)
-inter_data_in_3=Template("""
-inter_data_in($x)($y)($z)(3) <= inter_data_out($x)($y-1)($z)(1);
-""")
-inter_data_in_4=Template("""
-inter_data_in($x)($y)($z)(4) <= inter_data_out($x-1)($y)($z)(2);
-""")
-inter_data_in_5=Template("""
-inter_data_in($x)($y)($z)(5) <= inter_data_out($x)($y)($z+1)(6);
-""")
-inter_data_in_6=Template("""
-inter_data_in($x)($y)($z)(6) <= inter_data_out($x)($y)($z-1)(5);
-""")
-data_rx_str_tmp=Template("""&inter_data_in($x)($y)($z)($i)""")
-data_tx_str_tmp=Template("""&inter_data_out($x)($y)($z)($i)""")
-data_rx_str_tmp0=Template("""inter_data_in($x)($y)($z)(0)""")
-data_tx_str_tmp0=Template("""inter_data_out($x)($y)($z)(0)""")
-inter_data2data_in=Template("""data_in$x$y$z($pos) <= inter_data_in($x)($y)($z)($i);
-""")
-data_out2inter_data=Template("""inter_data_out($x)($y)($z)($i) <= data_out$x$y$z($pos);
+data_out2inter_data=Template("""inter_data_out($x)($y)($i) <= data_out$x$y($pos);
 """)
 #########################################################################################
 inter_incr_local=Template("""
-inter_incr_in($Xis)($Yis)($Zis)(0)($vc_num-1 downto 0) <= local_incr_rx_vec($io_sig_ub-1 downto $io_sig_lb);
-local_incr_tx_vec($io_sig_ub-1 downto $io_sig_lb) <= inter_incr_out($Xis)($Yis)($Zis)(0)($vc_num-1 downto 0);
+inter_incr_in($Xis)($Yis)(0)($vc_num-1 downto 0) <= local_incr_rx_vec($io_sig_ub-1 downto $io_sig_lb);
+local_incr_tx_vec($io_sig_ub-1 downto $io_sig_lb) <= inter_incr_out($Xis)($Yis)(0)($vc_num-1 downto 0);
 """)
-inter_incr_in_1=Template("""
-inter_incr_in($x)($y)($z)(1) <= inter_incr_out($x)($y+1)($z)(3);
+inter_incr_in=Template("""
+inter_incr_in($x)($y)($i) <= inter_incr_out($x$j)($y$k)($l);
 """)
-inter_incr_in_2=Template("""
-inter_incr_in($x)($y)($z)(2) <= inter_incr_out($x+1)($y)($z)(4);
+# inter_incr_in_1=Template("""
+# inter_incr_in($x)($y)($z)(1) <= inter_incr_out($x)($y+1)($z)(3);
+# """)
+# inter_incr_in_2=Template("""
+# inter_incr_in($x)($y)($z)(2) <= inter_incr_out($x+1)($y)($z)(4);
+# """)
+# inter_incr_in_3=Template("""
+# inter_incr_in($x)($y)($z)(3) <= inter_incr_out($x)($y-1)($z)(1);
+# """)
+# inter_incr_in_4=Template("""
+# inter_incr_in($x)($y)($z)(4) <= inter_incr_out($x-1)($y)($z)(2);
+# """)
+# inter_incr_in_5=Template("""
+# inter_incr_in($x)($y)($z)(5) <= inter_incr_out($x)($y)($z+1)(6);
+# """)
+# inter_incr_in_6=Template("""
+# inter_incr_in($x)($y)($z)(6) <= inter_incr_out($x)($y)($z-1)(5);
+# """)
+inter_incr2incr_in=Template("""incr_rx_vec$x$y($vc_ub-1 downto $vc_lb) <= inter_incr_in($x)($y)($i)($vc_num-1 downto 0);
 """)
-inter_incr_in_3=Template("""
-inter_incr_in($x)($y)($z)(3) <= inter_incr_out($x)($y-1)($z)(1);
+incr_out2inter_incr=Template("""inter_incr_out($x)($y)($i)($vc_num-1 downto 0) <= incr_tx_pl_vec$x$y($vc_ub-1 downto $vc_lb);
 """)
-inter_incr_in_4=Template("""
-inter_incr_in($x)($y)($z)(4) <= inter_incr_out($x-1)($y)($z)(2);
-""")
-inter_incr_in_5=Template("""
-inter_incr_in($x)($y)($z)(5) <= inter_incr_out($x)($y)($z+1)(6);
-""")
-inter_incr_in_6=Template("""
-inter_incr_in($x)($y)($z)(6) <= inter_incr_out($x)($y)($z-1)(5);
-""")
-inter_incr2incr_in=Template("""incr_rx_vec$x$y$z($vc_ub-1 downto $vc_lb) <= inter_incr_in($x)($y)($z)($i)($vc_num-1 downto 0);
-""")
-incr_out2inter_incr=Template("""inter_incr_out($x)($y)($z)($i)($vc_num-1 downto 0) <= incr_tx_pl_vec$x$y$z($vc_ub-1 downto $vc_lb);
-""")
-incr_rx_str_tmp0=Template("""inter_data_in($x)($y)($z)(0)""")
-incr_tx_str_tmp0=Template("""inter_data_out($x)($y)($z)(0)""")
+incr_rx_str_tmp0=Template("""inter_data_in($x)($y)(0)""")
+incr_tx_str_tmp0=Template("""inter_data_out($x)($y)(0)""")
 #########################################################################################
 inter_vc_write_local=Template("""
-inter_vc_write_in($Xis)($Yis)($Zis)(0)($vc_num-1 downto 0) <= local_vc_write_rx($io_sig_ub-1 downto $io_sig_lb);
-local_vc_write_tx($io_sig_ub-1 downto $io_sig_lb) <= inter_vc_write_out($Xis)($Yis)($Zis)(0)($vc_num-1 downto 0);
+inter_vc_write_in($Xis)($Yis)(0)($vc_num-1 downto 0) <= local_vc_write_rx($io_sig_ub-1 downto $io_sig_lb);
+local_vc_write_tx($io_sig_ub-1 downto $io_sig_lb) <= inter_vc_write_out($Xis)($Yis)(0)($vc_num-1 downto 0);
 """)
-inter_vc_write_in_1=Template("""
-inter_vc_write_in($x)($y)($z)(1) <= inter_vc_write_out($x)($y+1)($z)(3);
+inter_vc_write_in=Template("""
+inter_vc_write_in($x)($y)($i) <= inter_vc_write_out($x$j)($y$k)($l);
 """)
-inter_vc_write_in_2=Template("""
-inter_vc_write_in($x)($y)($z)(2) <= inter_vc_write_out($x+1)($y)($z)(4);
+# inter_vc_write_in_1=Template("""
+# inter_vc_write_in($x)($y)($z)(1) <= inter_vc_write_out($x)($y+1)($z)(3);
+# """)
+# inter_vc_write_in_2=Template("""
+# inter_vc_write_in($x)($y)($z)(2) <= inter_vc_write_out($x+1)($y)($z)(4);
+# """)
+# inter_vc_write_in_3=Template("""
+# inter_vc_write_in($x)($y)($z)(3) <= inter_vc_write_out($x)($y-1)($z)(1);
+# """)
+# inter_vc_write_in_4=Template("""
+# inter_vc_write_in($x)($y)($z)(4) <= inter_vc_write_out($x-1)($y)($z)(2);
+# """)
+# inter_vc_write_in_5=Template("""
+# inter_vc_write_in($x)($y)($z)(5) <= inter_vc_write_out($x)($y)($z+1)(6);
+# """)
+# inter_vc_write_in_6=Template("""
+# inter_vc_write_in($x)($y)($z)(6) <= inter_vc_write_out($x)($y)($z-1)(5);
+# """)
+inter_vc_write2vc_write_in=Template("""vc_write_rx_vec$x$y($vc_ub-1 downto $vc_lb) <= inter_vc_write_in($x)($y)($i)($vc_num-1 downto 0);
 """)
-inter_vc_write_in_3=Template("""
-inter_vc_write_in($x)($y)($z)(3) <= inter_vc_write_out($x)($y-1)($z)(1);
-""")
-inter_vc_write_in_4=Template("""
-inter_vc_write_in($x)($y)($z)(4) <= inter_vc_write_out($x-1)($y)($z)(2);
-""")
-inter_vc_write_in_5=Template("""
-inter_vc_write_in($x)($y)($z)(5) <= inter_vc_write_out($x)($y)($z+1)(6);
-""")
-inter_vc_write_in_6=Template("""
-inter_vc_write_in($x)($y)($z)(6) <= inter_vc_write_out($x)($y)($z-1)(5);
-""")
-inter_vc_write2vc_write_in=Template("""vc_write_rx_vec$x$y$z($vc_ub-1 downto $vc_lb) <= inter_vc_write_in($x)($y)($z)($i)($vc_num-1 downto 0);
-""")
-vc_write_out2inter_vc_write=Template("""inter_vc_write_out($x)($y)($z)($i)($vc_num-1 downto 0) <= vc_write_tx_pl_vec$x$y$z($vc_ub-1 downto $vc_lb);
+vc_write_out2inter_vc_write=Template("""inter_vc_write_out($x)($y)($i)($vc_num-1 downto 0) <= vc_write_tx_pl_vec$x$y($vc_ub-1 downto $vc_lb);
 """)
 #########################################################################################
 out_file='full_noc.vhd'
@@ -231,6 +267,160 @@ out_file='full_noc.vhd'
 #########################################################################################
 # code for writing each router scripts
 #########################################################################################
+
+prev_io_sig_lb = 0
+prev_io_sig_ub = 0
+
+def ftwrite_router_hetero(x, y, router_name, max_x, max_y, vc_map, rout_algo):
+  ft=open(out_file, "a")
+
+  global prev_io_sig_ub
+  
+  pos=0
+  vc_ub = 0
+  vc_lb = 0
+  z = 0
+  noc_x = max_x
+  noc_y = max_y
+
+  max_vc_num=get_max_vc(vc_map)
+  max_port_num=5
+
+  router_map = vc_map[router_name]
+  available_ports = router_map[AVAILABLE_PORTS]
+
+  vcs = []
+  for port in available_ports:
+    vcs.append(router_map[port][VC_COUNT])
+
+  # io_sig_lb=(x+(y*noc_x))*vc_xy[z]
+  # io_sig_ub=io_sig_lb+vc_xy[z]
+
+  if prev_io_sig_ub == 0:
+    io_sig_lb = 0
+  else:
+    io_sig_lb = prev_io_sig_ub
+
+  io_sig_ub=io_sig_lb+router_map[str(LOCAL)][VC_COUNT]
+
+  # io_sig_lb = 0
+  # io_sig_ub = 0
+
+  
+
+  port_exist = "("
+  vc_num_vec = "("
+  vc_num_out_vec = "("
+  # vc_depth = "("
+  # vc_depth="("
+  vc_depth_array = "("
+  vc_depth_out_array = "("
+  data_tx_str = ""
+  data_rx_str = ""
+
+  for port_string in available_ports:
+
+    port_map_info = router_map[port_string]
+    num_of_vcs = port_map_info[VC_COUNT]
+    port_vc_depth = port_map_info[BUFFER_DEPTH]
+
+    vc_lb = vc_ub
+    vc_ub = vc_lb + num_of_vcs
+
+    if port_string != "0":
+      port_exist += "," + port_string
+      vc_num_vec += ", " + str(num_of_vcs)
+      vc_num_out_vec += ", " + str(num_of_vcs)
+    else:
+      port_exist += port_string
+      vc_num_vec += str(num_of_vcs)
+      vc_num_out_vec += str(num_of_vcs)
+
+    vc_depth="("
+    for i in range(max_vc_num):
+      if i == 0 :
+        vc_depth = vc_depth + str(port_vc_depth)
+      else:
+        vc_depth = vc_depth + ", " + str(port_vc_depth)
+    vc_depth+=")"
+    if port_string != "0":
+      vc_depth_array = vc_depth_array + "," + vc_depth
+    else:
+      vc_depth_array = vc_depth_array + vc_depth
+
+    vc_depth_out="("
+    for i in range(max_vc_num):
+      if i == 0 :
+        vc_depth_out += str(port_vc_depth)
+      else:
+        vc_depth_out = vc_depth_out + ", " + str(port_vc_depth)
+    vc_depth_out+=")"
+    if port_string != "0":
+      vc_depth_out_array= vc_depth_out_array + "," + vc_depth_out
+    else:
+      vc_depth_out_array= vc_depth_out_array + vc_depth_out
+
+    j = ""
+    k = ""
+    l = ""
+    if port_string == "1":
+      k = "+1"
+      l = "3"
+    elif port_string == "2":
+      j = "+1"
+      l = "4"
+    elif port_string == "3":
+      k = "-1"
+      l = "1"
+    elif port_string == "4":
+      j = "-1"
+      l = "2"
+
+    ft.write(inter_data2data_in.substitute(x=str(x),y=str(y),pos=str(pos),i=port_string))
+    ft.write(data_out2inter_data.substitute(x=str(x),y=str(y),pos=str(pos),i=port_string))
+    ft.write(inter_incr2incr_in.substitute(x=str(x),y=str(y),pos=str(pos),i=port_string,vc_num=num_of_vcs,vc_ub=vc_ub,vc_lb=vc_lb))
+    ft.write(incr_out2inter_incr.substitute(x=str(x),y=str(y),pos=str(pos),i=port_string,vc_num=num_of_vcs,vc_ub=vc_ub,vc_lb=vc_lb))
+    ft.write(inter_vc_write2vc_write_in.substitute(x=str(x),y=str(y),pos=str(pos),i=port_string,vc_num=num_of_vcs,vc_ub= vc_ub,vc_lb= vc_lb))
+    ft.write(vc_write_out2inter_vc_write.substitute(x=str(x),y=str(y),pos=str(pos),i=port_string,vc_num=num_of_vcs,vc_ub= vc_ub,vc_lb= vc_lb))
+    if port_string != "0":
+      ft.write(inter_data_in.substitute(x=str(x),y=str(y),i=port_string,j=j,k=k,l=l))
+      ft.write(inter_incr_in.substitute(x=str(x),y=str(y),i=port_string,j=j,k=k,l=l))
+      ft.write(inter_vc_write_in.substitute(x=str(x),y=str(y),i=port_string,j=j,k=k,l=l))
+      data_rx_str+=data_rx_str_tmp.substitute(x=str(x),y=str(y),i=port_string,j=j,k=k,l=l)
+      data_tx_str+=data_tx_str_tmp.substitute(x=str(x),y=str(y),i=port_string,j=j,k=k,l=l)
+    pos += 1
+
+  port_exist+=")"			# End of port_exist string
+  vc_num_vec+=")"
+  vc_num_out_vec+=")"
+  vc_depth_array+=")"
+  vc_depth_out_array+=")"
+
+  ft.write(inter_data_local.substitute(Xis=str(x),Yis=str(y),i=str(x+(y*noc_x)+(z*noc_x*noc_y)) ))
+  ft.write(inter_incr_local.substitute(Xis=str(x),Yis=str(y),io_sig_ub=str(io_sig_ub), io_sig_lb=str(io_sig_lb), vc_num=router_map[str(LOCAL)][VC_COUNT]))
+  ft.write(inter_vc_write_local.substitute(Xis=str(x),Yis=str(y),io_sig_ub=str(io_sig_ub), io_sig_lb=str(io_sig_lb), vc_num=router_map[str(LOCAL)][VC_COUNT]))
+  ft.write(router_generic.substitute(
+					port_num= str(len(available_ports)),
+					Xis= str(x),
+					Yis= str(y),
+					port_exist= port_exist,
+					vc_num_vec= vc_num_vec,
+					vc_num_out_vec= vc_num_out_vec,
+					vc_depth_array= vc_depth_array,
+					vc_depth_out_array= vc_depth_out_array,
+          rout_algo= rout_algo
+					))
+  ft.write(router_port.substitute(
+					#port_num=str(port_num),
+					Xis=str(x),
+					Yis=str(y)
+					))
+
+  ft.close()
+  prev_io_sig_ub = io_sig_ub
+
+
+  
  
 def ftwrite_router(x,y,z,noc_x, noc_y, noc_z, vc_xy, vc_z, vc_num, depth_xy, depth_z, rout_algo):
   ft=open(out_file, "a")

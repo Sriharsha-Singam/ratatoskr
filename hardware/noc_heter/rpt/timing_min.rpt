@@ -1,0 +1,1919 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -nworst 50
+        -max_paths 50
+        -sort_by slack
+Design : full_noc
+Version: R-2020.09-SP3
+Date   : Tue Apr 27 18:21:48 2021
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NanGate_15nm_OCL
+Wire Load Model Mode: top
+
+  Startpoint: local_vc_write_rx(0)
+              (input port clocked by clk_input)
+  Endpoint: router_00/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx0x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(0) (in)                              0.000      0.002 r
+  router_00/vc_write_rx_vec(0) (router_pl_3_0_0_1_XY)    0.000      0.002 r
+  router_00/vc_input_buffer_i_0/vc_write_rx(0) (vc_input_buffer_4)
+                                                         0.000      0.002 r
+  router_00/vc_input_buffer_i_0/fifo_i_0/write_en (fifo_buff_depth5_3)
+                                                         0.000      0.002 r
+  router_00/vc_input_buffer_i_0/fifo_i_0/U231/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_00/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx0x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_00/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx0x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(0)
+              (input port clocked by clk_input)
+  Endpoint: router_00/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx1x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(0) (in)                              0.000      0.002 r
+  router_00/vc_write_rx_vec(0) (router_pl_3_0_0_1_XY)    0.000      0.002 r
+  router_00/vc_input_buffer_i_0/vc_write_rx(0) (vc_input_buffer_4)
+                                                         0.000      0.002 r
+  router_00/vc_input_buffer_i_0/fifo_i_0/write_en (fifo_buff_depth5_3)
+                                                         0.000      0.002 r
+  router_00/vc_input_buffer_i_0/fifo_i_0/U228/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_00/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx1x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_00/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx1x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(0)
+              (input port clocked by clk_input)
+  Endpoint: router_00/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx2x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(0) (in)                              0.000      0.002 r
+  router_00/vc_write_rx_vec(0) (router_pl_3_0_0_1_XY)    0.000      0.002 r
+  router_00/vc_input_buffer_i_0/vc_write_rx(0) (vc_input_buffer_4)
+                                                         0.000      0.002 r
+  router_00/vc_input_buffer_i_0/fifo_i_0/write_en (fifo_buff_depth5_3)
+                                                         0.000      0.002 r
+  router_00/vc_input_buffer_i_0/fifo_i_0/U562/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_00/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx2x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_00/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx2x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(1)
+              (input port clocked by clk_input)
+  Endpoint: router_00/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx0x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(1) (in)                              0.000      0.002 r
+  router_00/vc_write_rx_vec(1) (router_pl_3_0_0_1_XY)    0.000      0.002 r
+  router_00/vc_input_buffer_i_0/vc_write_rx(1) (vc_input_buffer_4)
+                                                         0.000      0.002 r
+  router_00/vc_input_buffer_i_0/fifo_i_1/write_en (fifo_buff_depth5_2)
+                                                         0.000      0.002 r
+  router_00/vc_input_buffer_i_0/fifo_i_1/U231/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_00/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx0x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_00/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx0x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(1)
+              (input port clocked by clk_input)
+  Endpoint: router_00/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx1x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(1) (in)                              0.000      0.002 r
+  router_00/vc_write_rx_vec(1) (router_pl_3_0_0_1_XY)    0.000      0.002 r
+  router_00/vc_input_buffer_i_0/vc_write_rx(1) (vc_input_buffer_4)
+                                                         0.000      0.002 r
+  router_00/vc_input_buffer_i_0/fifo_i_1/write_en (fifo_buff_depth5_2)
+                                                         0.000      0.002 r
+  router_00/vc_input_buffer_i_0/fifo_i_1/U228/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_00/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx1x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_00/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx1x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(1)
+              (input port clocked by clk_input)
+  Endpoint: router_00/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx2x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(1) (in)                              0.000      0.002 r
+  router_00/vc_write_rx_vec(1) (router_pl_3_0_0_1_XY)    0.000      0.002 r
+  router_00/vc_input_buffer_i_0/vc_write_rx(1) (vc_input_buffer_4)
+                                                         0.000      0.002 r
+  router_00/vc_input_buffer_i_0/fifo_i_1/write_en (fifo_buff_depth5_2)
+                                                         0.000      0.002 r
+  router_00/vc_input_buffer_i_0/fifo_i_1/U562/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_00/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx2x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_00/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx2x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(2)
+              (input port clocked by clk_input)
+  Endpoint: router_00/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx0x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(2) (in)                              0.000      0.002 r
+  router_00/vc_write_rx_vec(2) (router_pl_3_0_0_1_XY)    0.000      0.002 r
+  router_00/vc_input_buffer_i_0/vc_write_rx(2) (vc_input_buffer_4)
+                                                         0.000      0.002 r
+  router_00/vc_input_buffer_i_0/fifo_i_2/write_en (fifo_buff_depth5_1)
+                                                         0.000      0.002 r
+  router_00/vc_input_buffer_i_0/fifo_i_2/U231/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_00/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx0x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_00/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx0x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(2)
+              (input port clocked by clk_input)
+  Endpoint: router_00/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx1x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(2) (in)                              0.000      0.002 r
+  router_00/vc_write_rx_vec(2) (router_pl_3_0_0_1_XY)    0.000      0.002 r
+  router_00/vc_input_buffer_i_0/vc_write_rx(2) (vc_input_buffer_4)
+                                                         0.000      0.002 r
+  router_00/vc_input_buffer_i_0/fifo_i_2/write_en (fifo_buff_depth5_1)
+                                                         0.000      0.002 r
+  router_00/vc_input_buffer_i_0/fifo_i_2/U228/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_00/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx1x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_00/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx1x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(2)
+              (input port clocked by clk_input)
+  Endpoint: router_00/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx2x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(2) (in)                              0.000      0.002 r
+  router_00/vc_write_rx_vec(2) (router_pl_3_0_0_1_XY)    0.000      0.002 r
+  router_00/vc_input_buffer_i_0/vc_write_rx(2) (vc_input_buffer_4)
+                                                         0.000      0.002 r
+  router_00/vc_input_buffer_i_0/fifo_i_2/write_en (fifo_buff_depth5_1)
+                                                         0.000      0.002 r
+  router_00/vc_input_buffer_i_0/fifo_i_2/U562/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_00/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx2x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_00/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx2x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(3)
+              (input port clocked by clk_input)
+  Endpoint: router_00/vc_input_buffer_i_0/fifo_i_3/write_pointer_regx0x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(3) (in)                              0.000      0.002 r
+  router_00/vc_write_rx_vec(3) (router_pl_3_0_0_1_XY)    0.000      0.002 r
+  router_00/vc_input_buffer_i_0/vc_write_rx(3) (vc_input_buffer_4)
+                                                         0.000      0.002 r
+  router_00/vc_input_buffer_i_0/fifo_i_3/write_en (fifo_buff_depth5_0)
+                                                         0.000      0.002 r
+  router_00/vc_input_buffer_i_0/fifo_i_3/U231/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_00/vc_input_buffer_i_0/fifo_i_3/write_pointer_regx0x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_00/vc_input_buffer_i_0/fifo_i_3/write_pointer_regx0x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(3)
+              (input port clocked by clk_input)
+  Endpoint: router_00/vc_input_buffer_i_0/fifo_i_3/write_pointer_regx1x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(3) (in)                              0.000      0.002 r
+  router_00/vc_write_rx_vec(3) (router_pl_3_0_0_1_XY)    0.000      0.002 r
+  router_00/vc_input_buffer_i_0/vc_write_rx(3) (vc_input_buffer_4)
+                                                         0.000      0.002 r
+  router_00/vc_input_buffer_i_0/fifo_i_3/write_en (fifo_buff_depth5_0)
+                                                         0.000      0.002 r
+  router_00/vc_input_buffer_i_0/fifo_i_3/U228/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_00/vc_input_buffer_i_0/fifo_i_3/write_pointer_regx1x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_00/vc_input_buffer_i_0/fifo_i_3/write_pointer_regx1x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(3)
+              (input port clocked by clk_input)
+  Endpoint: router_00/vc_input_buffer_i_0/fifo_i_3/write_pointer_regx2x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(3) (in)                              0.000      0.002 r
+  router_00/vc_write_rx_vec(3) (router_pl_3_0_0_1_XY)    0.000      0.002 r
+  router_00/vc_input_buffer_i_0/vc_write_rx(3) (vc_input_buffer_4)
+                                                         0.000      0.002 r
+  router_00/vc_input_buffer_i_0/fifo_i_3/write_en (fifo_buff_depth5_0)
+                                                         0.000      0.002 r
+  router_00/vc_input_buffer_i_0/fifo_i_3/U562/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_00/vc_input_buffer_i_0/fifo_i_3/write_pointer_regx2x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_00/vc_input_buffer_i_0/fifo_i_3/write_pointer_regx2x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(32)
+              (input port clocked by clk_input)
+  Endpoint: router_01/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx0x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(32) (in)                             0.000      0.002 r
+  router_01/vc_write_rx_vec(0) (router_pl_4_0_1_1_XY)    0.000      0.002 r
+  router_01/vc_input_buffer_i_0/vc_write_rx(0) (vc_input_buffer_4_1_257)
+                                                         0.000      0.002 r
+  router_01/vc_input_buffer_i_0/fifo_i_0/write_en (fifo_buff_depth4_1031)
+                                                         0.000      0.002 r
+  router_01/vc_input_buffer_i_0/fifo_i_0/U367/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_01/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx0x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_01/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx0x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(32)
+              (input port clocked by clk_input)
+  Endpoint: router_01/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx1x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(32) (in)                             0.000      0.002 r
+  router_01/vc_write_rx_vec(0) (router_pl_4_0_1_1_XY)    0.000      0.002 r
+  router_01/vc_input_buffer_i_0/vc_write_rx(0) (vc_input_buffer_4_1_257)
+                                                         0.000      0.002 r
+  router_01/vc_input_buffer_i_0/fifo_i_0/write_en (fifo_buff_depth4_1031)
+                                                         0.000      0.002 r
+  router_01/vc_input_buffer_i_0/fifo_i_0/U364/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_01/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx1x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_01/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx1x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(33)
+              (input port clocked by clk_input)
+  Endpoint: router_01/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx0x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(33) (in)                             0.000      0.002 r
+  router_01/vc_write_rx_vec(1) (router_pl_4_0_1_1_XY)    0.000      0.002 r
+  router_01/vc_input_buffer_i_0/vc_write_rx(1) (vc_input_buffer_4_1_257)
+                                                         0.000      0.002 r
+  router_01/vc_input_buffer_i_0/fifo_i_1/write_en (fifo_buff_depth4_1030)
+                                                         0.000      0.002 r
+  router_01/vc_input_buffer_i_0/fifo_i_1/U367/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_01/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx0x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_01/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx0x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(33)
+              (input port clocked by clk_input)
+  Endpoint: router_01/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx1x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(33) (in)                             0.000      0.002 r
+  router_01/vc_write_rx_vec(1) (router_pl_4_0_1_1_XY)    0.000      0.002 r
+  router_01/vc_input_buffer_i_0/vc_write_rx(1) (vc_input_buffer_4_1_257)
+                                                         0.000      0.002 r
+  router_01/vc_input_buffer_i_0/fifo_i_1/write_en (fifo_buff_depth4_1030)
+                                                         0.000      0.002 r
+  router_01/vc_input_buffer_i_0/fifo_i_1/U364/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_01/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx1x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_01/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx1x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(34)
+              (input port clocked by clk_input)
+  Endpoint: router_01/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx0x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(34) (in)                             0.000      0.002 r
+  router_01/vc_write_rx_vec(2) (router_pl_4_0_1_1_XY)    0.000      0.002 r
+  router_01/vc_input_buffer_i_0/vc_write_rx(2) (vc_input_buffer_4_1_257)
+                                                         0.000      0.002 r
+  router_01/vc_input_buffer_i_0/fifo_i_2/write_en (fifo_buff_depth4_1029)
+                                                         0.000      0.002 r
+  router_01/vc_input_buffer_i_0/fifo_i_2/U367/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_01/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx0x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_01/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx0x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(34)
+              (input port clocked by clk_input)
+  Endpoint: router_01/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx1x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(34) (in)                             0.000      0.002 r
+  router_01/vc_write_rx_vec(2) (router_pl_4_0_1_1_XY)    0.000      0.002 r
+  router_01/vc_input_buffer_i_0/vc_write_rx(2) (vc_input_buffer_4_1_257)
+                                                         0.000      0.002 r
+  router_01/vc_input_buffer_i_0/fifo_i_2/write_en (fifo_buff_depth4_1029)
+                                                         0.000      0.002 r
+  router_01/vc_input_buffer_i_0/fifo_i_2/U364/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_01/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx1x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_01/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx1x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(35)
+              (input port clocked by clk_input)
+  Endpoint: router_01/vc_input_buffer_i_0/fifo_i_3/write_pointer_regx0x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(35) (in)                             0.000      0.002 r
+  router_01/vc_write_rx_vec(3) (router_pl_4_0_1_1_XY)    0.000      0.002 r
+  router_01/vc_input_buffer_i_0/vc_write_rx(3) (vc_input_buffer_4_1_257)
+                                                         0.000      0.002 r
+  router_01/vc_input_buffer_i_0/fifo_i_3/write_en (fifo_buff_depth4_1028)
+                                                         0.000      0.002 r
+  router_01/vc_input_buffer_i_0/fifo_i_3/U367/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_01/vc_input_buffer_i_0/fifo_i_3/write_pointer_regx0x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_01/vc_input_buffer_i_0/fifo_i_3/write_pointer_regx0x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(35)
+              (input port clocked by clk_input)
+  Endpoint: router_01/vc_input_buffer_i_0/fifo_i_3/write_pointer_regx1x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(35) (in)                             0.000      0.002 r
+  router_01/vc_write_rx_vec(3) (router_pl_4_0_1_1_XY)    0.000      0.002 r
+  router_01/vc_input_buffer_i_0/vc_write_rx(3) (vc_input_buffer_4_1_257)
+                                                         0.000      0.002 r
+  router_01/vc_input_buffer_i_0/fifo_i_3/write_en (fifo_buff_depth4_1028)
+                                                         0.000      0.002 r
+  router_01/vc_input_buffer_i_0/fifo_i_3/U364/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_01/vc_input_buffer_i_0/fifo_i_3/write_pointer_regx1x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_01/vc_input_buffer_i_0/fifo_i_3/write_pointer_regx1x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(64)
+              (input port clocked by clk_input)
+  Endpoint: router_02/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx0x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(64) (in)                             0.000      0.002 r
+  router_02/vc_write_rx_vec(0) (router_pl_4_0_2_1_XY)    0.000      0.002 r
+  router_02/vc_input_buffer_i_0/vc_write_rx(0) (vc_input_buffer_4_1_219)
+                                                         0.000      0.002 r
+  router_02/vc_input_buffer_i_0/fifo_i_0/write_en (fifo_buff_depth4_879)
+                                                         0.000      0.002 r
+  router_02/vc_input_buffer_i_0/fifo_i_0/U367/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_02/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx0x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_02/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx0x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(64)
+              (input port clocked by clk_input)
+  Endpoint: router_02/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx1x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(64) (in)                             0.000      0.002 r
+  router_02/vc_write_rx_vec(0) (router_pl_4_0_2_1_XY)    0.000      0.002 r
+  router_02/vc_input_buffer_i_0/vc_write_rx(0) (vc_input_buffer_4_1_219)
+                                                         0.000      0.002 r
+  router_02/vc_input_buffer_i_0/fifo_i_0/write_en (fifo_buff_depth4_879)
+                                                         0.000      0.002 r
+  router_02/vc_input_buffer_i_0/fifo_i_0/U364/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_02/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx1x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_02/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx1x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(65)
+              (input port clocked by clk_input)
+  Endpoint: router_02/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx0x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(65) (in)                             0.000      0.002 r
+  router_02/vc_write_rx_vec(1) (router_pl_4_0_2_1_XY)    0.000      0.002 r
+  router_02/vc_input_buffer_i_0/vc_write_rx(1) (vc_input_buffer_4_1_219)
+                                                         0.000      0.002 r
+  router_02/vc_input_buffer_i_0/fifo_i_1/write_en (fifo_buff_depth4_878)
+                                                         0.000      0.002 r
+  router_02/vc_input_buffer_i_0/fifo_i_1/U367/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_02/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx0x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_02/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx0x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(65)
+              (input port clocked by clk_input)
+  Endpoint: router_02/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx1x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(65) (in)                             0.000      0.002 r
+  router_02/vc_write_rx_vec(1) (router_pl_4_0_2_1_XY)    0.000      0.002 r
+  router_02/vc_input_buffer_i_0/vc_write_rx(1) (vc_input_buffer_4_1_219)
+                                                         0.000      0.002 r
+  router_02/vc_input_buffer_i_0/fifo_i_1/write_en (fifo_buff_depth4_878)
+                                                         0.000      0.002 r
+  router_02/vc_input_buffer_i_0/fifo_i_1/U364/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_02/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx1x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_02/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx1x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(66)
+              (input port clocked by clk_input)
+  Endpoint: router_02/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx0x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(66) (in)                             0.000      0.002 r
+  router_02/vc_write_rx_vec(2) (router_pl_4_0_2_1_XY)    0.000      0.002 r
+  router_02/vc_input_buffer_i_0/vc_write_rx(2) (vc_input_buffer_4_1_219)
+                                                         0.000      0.002 r
+  router_02/vc_input_buffer_i_0/fifo_i_2/write_en (fifo_buff_depth4_877)
+                                                         0.000      0.002 r
+  router_02/vc_input_buffer_i_0/fifo_i_2/U367/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_02/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx0x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_02/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx0x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(66)
+              (input port clocked by clk_input)
+  Endpoint: router_02/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx1x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(66) (in)                             0.000      0.002 r
+  router_02/vc_write_rx_vec(2) (router_pl_4_0_2_1_XY)    0.000      0.002 r
+  router_02/vc_input_buffer_i_0/vc_write_rx(2) (vc_input_buffer_4_1_219)
+                                                         0.000      0.002 r
+  router_02/vc_input_buffer_i_0/fifo_i_2/write_en (fifo_buff_depth4_877)
+                                                         0.000      0.002 r
+  router_02/vc_input_buffer_i_0/fifo_i_2/U364/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_02/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx1x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_02/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx1x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(67)
+              (input port clocked by clk_input)
+  Endpoint: router_02/vc_input_buffer_i_0/fifo_i_3/write_pointer_regx0x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(67) (in)                             0.000      0.002 r
+  router_02/vc_write_rx_vec(3) (router_pl_4_0_2_1_XY)    0.000      0.002 r
+  router_02/vc_input_buffer_i_0/vc_write_rx(3) (vc_input_buffer_4_1_219)
+                                                         0.000      0.002 r
+  router_02/vc_input_buffer_i_0/fifo_i_3/write_en (fifo_buff_depth4_876)
+                                                         0.000      0.002 r
+  router_02/vc_input_buffer_i_0/fifo_i_3/U367/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_02/vc_input_buffer_i_0/fifo_i_3/write_pointer_regx0x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_02/vc_input_buffer_i_0/fifo_i_3/write_pointer_regx0x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(67)
+              (input port clocked by clk_input)
+  Endpoint: router_02/vc_input_buffer_i_0/fifo_i_3/write_pointer_regx1x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(67) (in)                             0.000      0.002 r
+  router_02/vc_write_rx_vec(3) (router_pl_4_0_2_1_XY)    0.000      0.002 r
+  router_02/vc_input_buffer_i_0/vc_write_rx(3) (vc_input_buffer_4_1_219)
+                                                         0.000      0.002 r
+  router_02/vc_input_buffer_i_0/fifo_i_3/write_en (fifo_buff_depth4_876)
+                                                         0.000      0.002 r
+  router_02/vc_input_buffer_i_0/fifo_i_3/U364/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_02/vc_input_buffer_i_0/fifo_i_3/write_pointer_regx1x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_02/vc_input_buffer_i_0/fifo_i_3/write_pointer_regx1x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(96)
+              (input port clocked by clk_input)
+  Endpoint: router_03/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx0x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(96) (in)                             0.000      0.002 r
+  router_03/vc_write_rx_vec(0) (router_pl_4_0_3_1_XY)    0.000      0.002 r
+  router_03/vc_input_buffer_i_0/vc_write_rx(0) (vc_input_buffer_4_1_181)
+                                                         0.000      0.002 r
+  router_03/vc_input_buffer_i_0/fifo_i_0/write_en (fifo_buff_depth4_727)
+                                                         0.000      0.002 r
+  router_03/vc_input_buffer_i_0/fifo_i_0/U367/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_03/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx0x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_03/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx0x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(96)
+              (input port clocked by clk_input)
+  Endpoint: router_03/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx1x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(96) (in)                             0.000      0.002 r
+  router_03/vc_write_rx_vec(0) (router_pl_4_0_3_1_XY)    0.000      0.002 r
+  router_03/vc_input_buffer_i_0/vc_write_rx(0) (vc_input_buffer_4_1_181)
+                                                         0.000      0.002 r
+  router_03/vc_input_buffer_i_0/fifo_i_0/write_en (fifo_buff_depth4_727)
+                                                         0.000      0.002 r
+  router_03/vc_input_buffer_i_0/fifo_i_0/U364/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_03/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx1x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_03/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx1x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(97)
+              (input port clocked by clk_input)
+  Endpoint: router_03/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx0x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(97) (in)                             0.000      0.002 r
+  router_03/vc_write_rx_vec(1) (router_pl_4_0_3_1_XY)    0.000      0.002 r
+  router_03/vc_input_buffer_i_0/vc_write_rx(1) (vc_input_buffer_4_1_181)
+                                                         0.000      0.002 r
+  router_03/vc_input_buffer_i_0/fifo_i_1/write_en (fifo_buff_depth4_726)
+                                                         0.000      0.002 r
+  router_03/vc_input_buffer_i_0/fifo_i_1/U367/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_03/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx0x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_03/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx0x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(97)
+              (input port clocked by clk_input)
+  Endpoint: router_03/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx1x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(97) (in)                             0.000      0.002 r
+  router_03/vc_write_rx_vec(1) (router_pl_4_0_3_1_XY)    0.000      0.002 r
+  router_03/vc_input_buffer_i_0/vc_write_rx(1) (vc_input_buffer_4_1_181)
+                                                         0.000      0.002 r
+  router_03/vc_input_buffer_i_0/fifo_i_1/write_en (fifo_buff_depth4_726)
+                                                         0.000      0.002 r
+  router_03/vc_input_buffer_i_0/fifo_i_1/U364/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_03/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx1x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_03/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx1x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(98)
+              (input port clocked by clk_input)
+  Endpoint: router_03/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx0x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(98) (in)                             0.000      0.002 r
+  router_03/vc_write_rx_vec(2) (router_pl_4_0_3_1_XY)    0.000      0.002 r
+  router_03/vc_input_buffer_i_0/vc_write_rx(2) (vc_input_buffer_4_1_181)
+                                                         0.000      0.002 r
+  router_03/vc_input_buffer_i_0/fifo_i_2/write_en (fifo_buff_depth4_725)
+                                                         0.000      0.002 r
+  router_03/vc_input_buffer_i_0/fifo_i_2/U367/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_03/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx0x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_03/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx0x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(98)
+              (input port clocked by clk_input)
+  Endpoint: router_03/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx1x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(98) (in)                             0.000      0.002 r
+  router_03/vc_write_rx_vec(2) (router_pl_4_0_3_1_XY)    0.000      0.002 r
+  router_03/vc_input_buffer_i_0/vc_write_rx(2) (vc_input_buffer_4_1_181)
+                                                         0.000      0.002 r
+  router_03/vc_input_buffer_i_0/fifo_i_2/write_en (fifo_buff_depth4_725)
+                                                         0.000      0.002 r
+  router_03/vc_input_buffer_i_0/fifo_i_2/U364/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_03/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx1x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_03/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx1x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(99)
+              (input port clocked by clk_input)
+  Endpoint: router_03/vc_input_buffer_i_0/fifo_i_3/write_pointer_regx0x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(99) (in)                             0.000      0.002 r
+  router_03/vc_write_rx_vec(3) (router_pl_4_0_3_1_XY)    0.000      0.002 r
+  router_03/vc_input_buffer_i_0/vc_write_rx(3) (vc_input_buffer_4_1_181)
+                                                         0.000      0.002 r
+  router_03/vc_input_buffer_i_0/fifo_i_3/write_en (fifo_buff_depth4_724)
+                                                         0.000      0.002 r
+  router_03/vc_input_buffer_i_0/fifo_i_3/U367/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_03/vc_input_buffer_i_0/fifo_i_3/write_pointer_regx0x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_03/vc_input_buffer_i_0/fifo_i_3/write_pointer_regx0x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(99)
+              (input port clocked by clk_input)
+  Endpoint: router_03/vc_input_buffer_i_0/fifo_i_3/write_pointer_regx1x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(99) (in)                             0.000      0.002 r
+  router_03/vc_write_rx_vec(3) (router_pl_4_0_3_1_XY)    0.000      0.002 r
+  router_03/vc_input_buffer_i_0/vc_write_rx(3) (vc_input_buffer_4_1_181)
+                                                         0.000      0.002 r
+  router_03/vc_input_buffer_i_0/fifo_i_3/write_en (fifo_buff_depth4_724)
+                                                         0.000      0.002 r
+  router_03/vc_input_buffer_i_0/fifo_i_3/U364/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_03/vc_input_buffer_i_0/fifo_i_3/write_pointer_regx1x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_03/vc_input_buffer_i_0/fifo_i_3/write_pointer_regx1x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(128)
+              (input port clocked by clk_input)
+  Endpoint: router_04/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx0x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(128) (in)                            0.000      0.002 r
+  router_04/vc_write_rx_vec(0) (router_pl_4_0_4_1_XY)    0.000      0.002 r
+  router_04/vc_input_buffer_i_0/vc_write_rx(0) (vc_input_buffer_4_1_143)
+                                                         0.000      0.002 r
+  router_04/vc_input_buffer_i_0/fifo_i_0/write_en (fifo_buff_depth4_575)
+                                                         0.000      0.002 r
+  router_04/vc_input_buffer_i_0/fifo_i_0/U367/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_04/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx0x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_04/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx0x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(128)
+              (input port clocked by clk_input)
+  Endpoint: router_04/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx1x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(128) (in)                            0.000      0.002 r
+  router_04/vc_write_rx_vec(0) (router_pl_4_0_4_1_XY)    0.000      0.002 r
+  router_04/vc_input_buffer_i_0/vc_write_rx(0) (vc_input_buffer_4_1_143)
+                                                         0.000      0.002 r
+  router_04/vc_input_buffer_i_0/fifo_i_0/write_en (fifo_buff_depth4_575)
+                                                         0.000      0.002 r
+  router_04/vc_input_buffer_i_0/fifo_i_0/U364/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_04/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx1x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_04/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx1x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(129)
+              (input port clocked by clk_input)
+  Endpoint: router_04/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx0x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(129) (in)                            0.000      0.002 r
+  router_04/vc_write_rx_vec(1) (router_pl_4_0_4_1_XY)    0.000      0.002 r
+  router_04/vc_input_buffer_i_0/vc_write_rx(1) (vc_input_buffer_4_1_143)
+                                                         0.000      0.002 r
+  router_04/vc_input_buffer_i_0/fifo_i_1/write_en (fifo_buff_depth4_574)
+                                                         0.000      0.002 r
+  router_04/vc_input_buffer_i_0/fifo_i_1/U367/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_04/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx0x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_04/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx0x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(129)
+              (input port clocked by clk_input)
+  Endpoint: router_04/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx1x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(129) (in)                            0.000      0.002 r
+  router_04/vc_write_rx_vec(1) (router_pl_4_0_4_1_XY)    0.000      0.002 r
+  router_04/vc_input_buffer_i_0/vc_write_rx(1) (vc_input_buffer_4_1_143)
+                                                         0.000      0.002 r
+  router_04/vc_input_buffer_i_0/fifo_i_1/write_en (fifo_buff_depth4_574)
+                                                         0.000      0.002 r
+  router_04/vc_input_buffer_i_0/fifo_i_1/U364/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_04/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx1x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_04/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx1x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(130)
+              (input port clocked by clk_input)
+  Endpoint: router_04/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx0x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(130) (in)                            0.000      0.002 r
+  router_04/vc_write_rx_vec(2) (router_pl_4_0_4_1_XY)    0.000      0.002 r
+  router_04/vc_input_buffer_i_0/vc_write_rx(2) (vc_input_buffer_4_1_143)
+                                                         0.000      0.002 r
+  router_04/vc_input_buffer_i_0/fifo_i_2/write_en (fifo_buff_depth4_573)
+                                                         0.000      0.002 r
+  router_04/vc_input_buffer_i_0/fifo_i_2/U367/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_04/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx0x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_04/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx0x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(130)
+              (input port clocked by clk_input)
+  Endpoint: router_04/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx1x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(130) (in)                            0.000      0.002 r
+  router_04/vc_write_rx_vec(2) (router_pl_4_0_4_1_XY)    0.000      0.002 r
+  router_04/vc_input_buffer_i_0/vc_write_rx(2) (vc_input_buffer_4_1_143)
+                                                         0.000      0.002 r
+  router_04/vc_input_buffer_i_0/fifo_i_2/write_en (fifo_buff_depth4_573)
+                                                         0.000      0.002 r
+  router_04/vc_input_buffer_i_0/fifo_i_2/U364/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_04/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx1x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_04/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx1x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(131)
+              (input port clocked by clk_input)
+  Endpoint: router_04/vc_input_buffer_i_0/fifo_i_3/write_pointer_regx0x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(131) (in)                            0.000      0.002 r
+  router_04/vc_write_rx_vec(3) (router_pl_4_0_4_1_XY)    0.000      0.002 r
+  router_04/vc_input_buffer_i_0/vc_write_rx(3) (vc_input_buffer_4_1_143)
+                                                         0.000      0.002 r
+  router_04/vc_input_buffer_i_0/fifo_i_3/write_en (fifo_buff_depth4_572)
+                                                         0.000      0.002 r
+  router_04/vc_input_buffer_i_0/fifo_i_3/U367/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_04/vc_input_buffer_i_0/fifo_i_3/write_pointer_regx0x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_04/vc_input_buffer_i_0/fifo_i_3/write_pointer_regx0x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(131)
+              (input port clocked by clk_input)
+  Endpoint: router_04/vc_input_buffer_i_0/fifo_i_3/write_pointer_regx1x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(131) (in)                            0.000      0.002 r
+  router_04/vc_write_rx_vec(3) (router_pl_4_0_4_1_XY)    0.000      0.002 r
+  router_04/vc_input_buffer_i_0/vc_write_rx(3) (vc_input_buffer_4_1_143)
+                                                         0.000      0.002 r
+  router_04/vc_input_buffer_i_0/fifo_i_3/write_en (fifo_buff_depth4_572)
+                                                         0.000      0.002 r
+  router_04/vc_input_buffer_i_0/fifo_i_3/U364/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_04/vc_input_buffer_i_0/fifo_i_3/write_pointer_regx1x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_04/vc_input_buffer_i_0/fifo_i_3/write_pointer_regx1x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(160)
+              (input port clocked by clk_input)
+  Endpoint: router_05/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx0x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(160) (in)                            0.000      0.002 r
+  router_05/vc_write_rx_vec(0) (router_pl_4_0_5_1_XY)    0.000      0.002 r
+  router_05/vc_input_buffer_i_0/vc_write_rx(0) (vc_input_buffer_4_1_105)
+                                                         0.000      0.002 r
+  router_05/vc_input_buffer_i_0/fifo_i_0/write_en (fifo_buff_depth4_423)
+                                                         0.000      0.002 r
+  router_05/vc_input_buffer_i_0/fifo_i_0/U367/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_05/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx0x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_05/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx0x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(160)
+              (input port clocked by clk_input)
+  Endpoint: router_05/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx1x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(160) (in)                            0.000      0.002 r
+  router_05/vc_write_rx_vec(0) (router_pl_4_0_5_1_XY)    0.000      0.002 r
+  router_05/vc_input_buffer_i_0/vc_write_rx(0) (vc_input_buffer_4_1_105)
+                                                         0.000      0.002 r
+  router_05/vc_input_buffer_i_0/fifo_i_0/write_en (fifo_buff_depth4_423)
+                                                         0.000      0.002 r
+  router_05/vc_input_buffer_i_0/fifo_i_0/U364/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_05/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx1x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_05/vc_input_buffer_i_0/fifo_i_0/write_pointer_regx1x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(161)
+              (input port clocked by clk_input)
+  Endpoint: router_05/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx0x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(161) (in)                            0.000      0.002 r
+  router_05/vc_write_rx_vec(1) (router_pl_4_0_5_1_XY)    0.000      0.002 r
+  router_05/vc_input_buffer_i_0/vc_write_rx(1) (vc_input_buffer_4_1_105)
+                                                         0.000      0.002 r
+  router_05/vc_input_buffer_i_0/fifo_i_1/write_en (fifo_buff_depth4_422)
+                                                         0.000      0.002 r
+  router_05/vc_input_buffer_i_0/fifo_i_1/U367/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_05/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx0x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_05/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx0x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(161)
+              (input port clocked by clk_input)
+  Endpoint: router_05/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx1x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(161) (in)                            0.000      0.002 r
+  router_05/vc_write_rx_vec(1) (router_pl_4_0_5_1_XY)    0.000      0.002 r
+  router_05/vc_input_buffer_i_0/vc_write_rx(1) (vc_input_buffer_4_1_105)
+                                                         0.000      0.002 r
+  router_05/vc_input_buffer_i_0/fifo_i_1/write_en (fifo_buff_depth4_422)
+                                                         0.000      0.002 r
+  router_05/vc_input_buffer_i_0/fifo_i_1/U364/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_05/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx1x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_05/vc_input_buffer_i_0/fifo_i_1/write_pointer_regx1x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(162)
+              (input port clocked by clk_input)
+  Endpoint: router_05/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx0x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(162) (in)                            0.000      0.002 r
+  router_05/vc_write_rx_vec(2) (router_pl_4_0_5_1_XY)    0.000      0.002 r
+  router_05/vc_input_buffer_i_0/vc_write_rx(2) (vc_input_buffer_4_1_105)
+                                                         0.000      0.002 r
+  router_05/vc_input_buffer_i_0/fifo_i_2/write_en (fifo_buff_depth4_421)
+                                                         0.000      0.002 r
+  router_05/vc_input_buffer_i_0/fifo_i_2/U367/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_05/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx0x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_05/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx0x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+  Startpoint: local_vc_write_rx(162)
+              (input port clocked by clk_input)
+  Endpoint: router_05/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx1x
+            (rising edge-triggered flip-flop clocked by clk_input)
+  Path Group: clk_input
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.002      0.002 r
+  local_vc_write_rx(162) (in)                            0.000      0.002 r
+  router_05/vc_write_rx_vec(2) (router_pl_4_0_5_1_XY)    0.000      0.002 r
+  router_05/vc_input_buffer_i_0/vc_write_rx(2) (vc_input_buffer_4_1_105)
+                                                         0.000      0.002 r
+  router_05/vc_input_buffer_i_0/fifo_i_2/write_en (fifo_buff_depth4_421)
+                                                         0.000      0.002 r
+  router_05/vc_input_buffer_i_0/fifo_i_2/U364/ZN (OAI21_X1)
+                                                         1.534      1.536 f
+  router_05/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx1x/D (DFFRNQ_X1)
+                                                         0.000      1.536 f
+  data arrival time                                                 1.536
+
+  clock clk_input (rise edge)                            0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.002      0.002
+  router_05/vc_input_buffer_i_0/fifo_i_2/write_pointer_regx1x/CLK (DFFRNQ_X1)
+                                                         0.000      0.002 r
+  library hold time                                      1.748      1.750
+  data required time                                                1.750
+  --------------------------------------------------------------------------
+  data required time                                                1.750
+  data arrival time                                                -1.536
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.214
+
+
+1

@@ -40,7 +40,6 @@ use work.TURNS_3D_NOC.all;
 entity header_arbiter_and_decoder is
   generic (Xis                          : natural     := 1;
            Yis                          : natural     := 1;
-           Zis                          : natural     := 1;
            port_num                     : integer     := $max_port_num;
            port_exist                   : integer_vec := $max_port_exist;
            port_is                      : integer     := 1;  -- current port
@@ -65,7 +64,7 @@ end header_arbiter_and_decoder;
 
 architecture rtl of header_arbiter_and_decoder is
 
-  constant poss_routes              : turn_table_3D := routes_3D(rout_algo);
+  constant poss_routes              : turn_table_2D := routes_2D(rout_algo);
   signal new_package_vc, grant      : std_logic_vector(vc_num-1 downto 0);
   signal flit_count_0, flit_count_1 : std_logic_vector(vc_num-1 downto 0);
   type flit_counter_vector is array(vc_num-1 downto 0) of
@@ -126,7 +125,6 @@ begin
     generic map (
       Xis       => Xis,
       Yis       => Yis,
-      Zis       => Zis,
       rout_algo => rout_algo)
     port map (
       address => address_nxt,

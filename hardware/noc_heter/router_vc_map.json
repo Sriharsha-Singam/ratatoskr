@@ -1,0 +1,20 @@
+{
+    "router0": {
+        "north": {
+            "vc_count": 5,
+            "buffer_depth": 10
+        },
+        "east": {
+            "vc_count": 3,
+            "buffer_depth": 2
+        },
+        "south": {
+            "vc_count": 7,
+            "buffer_depth": 4
+        },
+        "west": {
+            "vc_count": 10,
+            "buffer_depth": 3
+        }
+    }
+}

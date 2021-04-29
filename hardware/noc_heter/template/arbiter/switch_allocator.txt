@@ -71,7 +71,7 @@ entity switch_allocator is
 end entity switch_allocator;
 
 architecture rtl of switch_allocator is
-  constant poss_routes             : turn_table_3D := routes_3D(rout_algo);
+  constant poss_routes             : turn_table_2D := routes_2D(rout_algo);
   constant sel_width               : positive      := bit_width(port_num-1);
   signal switch_rq                 : std_logic_vector(int_vec_sum(vc_num_vec)-1 downto 0);
   signal switch_rq_grant           : vc_status_array(port_num-1 downto 0);

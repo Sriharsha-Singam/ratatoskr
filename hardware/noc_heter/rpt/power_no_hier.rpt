@@ -1,0 +1,49 @@
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : full_noc
+Version: R-2020.09-SP3
+Date   : Tue Apr 27 18:23:32 2021
+****************************************
+
+
+Library(s) Used:
+
+    NanGate_15nm_OCL (File: /nethome/ssingam3/noc_synthesis/lib/NanGate_15nm_OCL.db)
+
+
+Operating Conditions: typical   Library: NanGate_15nm_OCL
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 0.8  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ps
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+  Cell Internal Power  = 374.5583 mW   (92%)
+  Net Switching Power  =  33.5692 mW    (8%)
+                         ---------
+Total Dynamic Power    = 408.1275 mW  (100%)
+
+Cell Leakage Power     =  15.8367 mW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register         356.3319            5.7044        7.0439e+09          369.0114  (  87.04%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational     18.2887           27.8535        8.7928e+09           54.9407  (  12.96%)
+--------------------------------------------------------------------------------------------------
+Total            374.6206 mW        33.5579 mW     1.5837e+10 pW       423.9520 mW
+1

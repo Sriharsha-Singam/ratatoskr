@@ -37,7 +37,7 @@ package NOC_3D_PACKAGE is
   constant max_vc_num_out : positive := $max_vc_num_out;  -- Max VCs of an op. channel
   constant max_x_dim      : positive := $max_x_dim;  -- Max number of routers in X-dim
   constant max_y_dim      : positive := $max_y_dim;  -- Max number of routers in Y-dim
-  constant max_Z_dim      : positive := $max_z_dim;  -- Max number of routers in Z-dim
+  -- constant max_Z_dim      : positive := $max_z_dim;  -- Max number of routers in Z-dim
   constant max_packet_len : positive := $max_packet_len;  -- Max packet_length in flits
                                              -- (ideal is 2^N-1)
   constant max_port_num   : positive := $max_port_num; -- Max number of router port
@@ -47,8 +47,8 @@ package NOC_3D_PACKAGE is
   constant int_east  : natural := 2;
   constant int_south : natural := 3;
   constant int_west  : natural := 4;
-  constant int_up    : natural := 5;
-  constant int_down  : natural := 6;
+  -- constant int_up    : natural := 5;
+  -- constant int_down  : natural := 6;
 
   -- General contants for the used technology
   constant RST_LVL : std_logic := '$rst_lvl';  -- Level to acticate reset ('1' =>
@@ -59,7 +59,7 @@ package NOC_3D_PACKAGE is
   constant packet_len_width : positive;  -- Header Bits req. for packet-length
   constant x_addr_width     : positive;  -- Header Bits req. for Dest. Addr X
   constant y_addr_width     : positive;  -- Header Bits req. for Dest. Addr Y
-  constant z_addr_width     : positive;  -- Header Bits req. for Dest. Addr Z
+  -- constant z_addr_width     : positive;  -- Header Bits req. for Dest. Addr Z
 
 
 --------------------------------------------------------------------------------
@@ -81,9 +81,10 @@ package NOC_3D_PACKAGE is
     positive(ceil(log2(real(max_vc_num))))-1 downto 0);
   type vc_status_array is array (natural range <>) of vc_status_vec;
   type vc_status_array_enc is array (natural range <>) of vc_status_vec_enc;
-  subtype vc_prop_int is integer_vec(0 to max_vc_num-1);  -- integer vc
-                                                          -- propoerties
-                                                          -- (e.g. depth)
+  subtype vc_prop_int is integer_vec(0 to $max_vc_num-1);  -- integer vc
+  --                                                         -- propoerties
+  --                                                         -- (e.g. depth)
+  -- type vc_prop_int is array (natural range <>) of integer_vec;
   type vc_prop_int_array is array (natural range <>) of vc_prop_int;
 
   -- Full NoC related
@@ -97,7 +98,7 @@ package NOC_3D_PACKAGE is
     ------------------------------- (x_addr_width-1 downto 0)
     y_dest        : std_logic_vector(positive(ceil(log2(real(max_y_dim))))-1 downto 0);
     ------------------------------- (y_addr_width-1 downto 0)     
-    z_dest        : std_logic_vector(positive(ceil(log2(real(max_z_dim))))-1 downto 0);
+    -- z_dest        : std_logic_vector(positive(ceil(log2(real(max_z_dim))))-1 downto 0);
   --------------------------------- (z_addr_width-1 downto 0)          
   end record;
   type header_inf_vector is array (natural range <>) of header_inf;
@@ -108,7 +109,7 @@ package NOC_3D_PACKAGE is
     ------------------------------- (x_addr_width-1 downto 0)
     y_dest : std_logic_vector(positive(ceil(log2(real(max_y_dim))))-1 downto 0);
     ------------------------------- (y_addr_width-1 downto 0)     
-    z_dest : std_logic_vector(positive(ceil(log2(real(max_z_dim))))-1 downto 0);
+    -- z_dest : std_logic_vector(positive(ceil(log2(real(max_z_dim))))-1 downto 0);
   --------------------------------- (z_addr_width-1 downto 0)          
   end record;
 
@@ -132,7 +133,7 @@ package NOC_3D_PACKAGE is
   -- Get the req. information from the head_flit
   function get_header_inf(x : std_logic_vector) return header_inf;
 
-  -- Get the dest. adress from the header information
+  -- Get the dest. address from the header information
   function extract_address_inf(x : header_inf) return address_inf;
 
   -- Sum all values of an integer array
@@ -178,7 +179,7 @@ package body NOC_3D_PACKAGE is
   constant packet_len_width : positive := bit_width(max_packet_len+1);
   constant x_addr_width     : positive := bit_width(max_x_dim);
   constant y_addr_width     : positive := bit_width(max_y_dim);
-  constant z_addr_width     : positive := bit_width(max_z_dim);
+  -- constant z_addr_width     : positive := bit_width(max_z_dim);
 
 
   -- Transfer "std_logic_vector" (intp. unsigned) to "natural integer"   
@@ -232,7 +233,7 @@ package body NOC_3D_PACKAGE is
     offset          := offset + x_addr_width;
     y.y_dest        := x(y_addr_width+offset-1 downto offset);
     offset          := offset + y_addr_width;
-    y.z_dest        := x(z_addr_width+offset-1 downto offset);
+    -- y.z_dest        := x(z_addr_width+offset-1 downto offset);
     return y;
   end function;
 
@@ -242,7 +243,7 @@ package body NOC_3D_PACKAGE is
   begin
     y.x_dest := x.x_dest;
     y.y_dest := x.y_dest;
-    y.z_dest := x.z_dest;
+    -- y.z_dest := x.z_dest;
     return y;
   end function;
 
@@ -258,7 +259,7 @@ package body NOC_3D_PACKAGE is
     return var;
   end function;
 
-  -- Uper range
+  -- Upper range
   function upper_range(x : integer_vec; i : natural) return natural is
     variable var : natural;
   begin

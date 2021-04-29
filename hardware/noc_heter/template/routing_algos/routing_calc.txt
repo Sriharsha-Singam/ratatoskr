@@ -30,7 +30,7 @@ entity routing_calc is
     Xis       : natural := 1;
     Yis       : natural := 1;
     Zis       : natural := 1;
-    rout_algo : string  := "DXYU");
+    rout_algo : string  := "XY");
   port(
     address : in  address_inf;
     enable  : in  std_logic;
@@ -40,50 +40,61 @@ end routing_calc;
 architecture rtl of routing_calc is
 begin
 
-  ROUTING_DXYU : if rout_algo = "DXYU" generate
-    dxyu_routing_1 : entity work.dxyu_routing
-      generic map (
-        Xis => Xis,
-        Yis => Yis,
-        Zis => Zis)
-      port map (
-        address => address,
-        enable  => enable,
-        routing => routing);
-  end generate;
+  -- ROUTING_DXYU : if rout_algo = "DXYU" generate
+  --   dxyu_routing_1 : entity work.dxyu_routing
+  --     generic map (
+  --       Xis => Xis,
+  --       Yis => Yis,
+  --       Zis => Zis)
+  --     port map (
+  --       address => address,
+  --       enable  => enable,
+  --       routing => routing);
+  -- end generate;
 
 
-  ROUTING_UXYD : if rout_algo = "UXYD" generate
-    dxyu_routing_1 : entity work.uxyd_routing
-      generic map (
-        Xis => Xis,
-        Yis => Yis,
-        Zis => Zis)
-      port map (
-        address => address,
-        enable  => enable,
-        routing => routing);
-  end generate;
+  -- ROUTING_UXYD : if rout_algo = "UXYD" generate
+  --   dxyu_routing_1 : entity work.uxyd_routing
+  --     generic map (
+  --       Xis => Xis,
+  --       Yis => Yis,
+  --       Zis => Zis)
+  --     port map (
+  --       address => address,
+  --       enable  => enable,
+  --       routing => routing);
+  -- end generate;
 
-  ROUTING_XYZ : if rout_algo = "XYZ" or rout_algo = "XYZ_ref"
-  or rout_algo = "XYZ_REF" generate
-    dxyu_routing_1 : entity work.xyz_routing
-      generic map (
-        Xis => Xis,
-        Yis => Yis,
-        Zis => Zis)
-      port map (
-        address => address,
-        enable  => enable,
-        routing => routing);
-  end generate;
+  -- ROUTING_XYZ : if rout_algo = "XYZ" or rout_algo = "XYZ_ref"
+  -- or rout_algo = "XYZ_REF" generate
+  --   dxyu_routing_1 : entity work.xyz_routing
+  --     generic map (
+  --       Xis => Xis,
+  --       Yis => Yis,
+  --       Zis => Zis)
+  --     port map (
+  --       address => address,
+  --       enable  => enable,
+  --       routing => routing);
+  -- end generate;
 
-  ROUTING_ZXY : if rout_algo = "ZXY" generate
-    dxyu_routing_1 : entity work.zxy_routing
+  -- ROUTING_ZXY : if rout_algo = "ZXY" generate
+  --   dxyu_routing_1 : entity work.zxy_routing
+  --     generic map (
+  --       Xis => Xis,
+  --       Yis => Yis,
+  --       Zis => Zis)
+  --     port map (
+  --       address => address,
+  --       enable  => enable,
+  --       routing => routing);
+  -- end generate;
+
+  ROUTING_XY : if rout_algo = "XY" generate
+    xy_routing_1 : entity work.xy_routing
       generic map (
         Xis => Xis,
-        Yis => Yis,
-        Zis => Zis)
+        Yis => Yis)
       port map (
         address => address,
         enable  => enable,

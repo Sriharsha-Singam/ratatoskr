@@ -1,0 +1,1989 @@
+{
+    "noc_x": 8,
+    "noc_y": 8,
+    "num_routers": 64,
+    "router_00": {
+        "available_ports": [
+            "0",
+            "1",
+            "2"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 5
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_01": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_02": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_03": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_04": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_05": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_06": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_07": {
+        "available_ports": [
+            "0",
+            "2",
+            "3"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_10": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_11": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_12": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_13": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_14": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_15": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_16": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_17": {
+        "available_ports": [
+            "0",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_20": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_21": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_22": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_23": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_24": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_25": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_26": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_27": {
+        "available_ports": [
+            "0",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_30": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_31": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_32": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_33": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_34": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_35": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_36": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_37": {
+        "available_ports": [
+            "0",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_40": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_41": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_42": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_43": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_44": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_45": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_46": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_47": {
+        "available_ports": [
+            "0",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_50": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_51": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_52": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_53": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_54": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_55": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_56": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_57": {
+        "available_ports": [
+            "0",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_60": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_61": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_62": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_63": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_64": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_65": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_66": {
+        "available_ports": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_67": {
+        "available_ports": [
+            "0",
+            "2",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "2": {
+            "name": "East",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_70": {
+        "available_ports": [
+            "0",
+            "1",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_71": {
+        "available_ports": [
+            "0",
+            "1",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_72": {
+        "available_ports": [
+            "0",
+            "1",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_73": {
+        "available_ports": [
+            "0",
+            "1",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_74": {
+        "available_ports": [
+            "0",
+            "1",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_75": {
+        "available_ports": [
+            "0",
+            "1",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_76": {
+        "available_ports": [
+            "0",
+            "1",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "1": {
+            "name": "North",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    },
+    "router_77": {
+        "available_ports": [
+            "0",
+            "3",
+            "4"
+        ],
+        "0": {
+            "name": "Local",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "3": {
+            "name": "South",
+            "vc_count": 4,
+            "buffer_depth": 4
+        },
+        "4": {
+            "name": "West",
+            "vc_count": 4,
+            "buffer_depth": 4
+        }
+    }
+}
